@@ -1,0 +1,62 @@
+.gallery-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.gallery-container .mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-container .mySwiper img {
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-container .mySwiper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom pagination styling */
+.gallery-container .swiper-pagination-bullet {
+    background: #4377a2;
+    opacity: 0.8;
+}
+
+.gallery-container .swiper-pagination-bullet-active {
+    background: var(--color-began);
+    opacity: 1;
+}
+
+/* Custom navigation buttons */
+.gallery-container .swiper-button-next,
+.gallery-container .swiper-button-prev {
+    color: #003873;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-container .swiper-button-next:hover,
+.gallery-container .swiper-button-prev:hover {
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container .mySwiper img {
+        border-radius: 10px;
+    }
+}

@@ -1,70 +1,88 @@
 import React, { useState } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
-import logo from '../../Assets/logo.png'
+import logo from '../../Assets/logo.jpg'
+import headImg from './IIST-HEADER.png'
 
 const Header = () => {
   const menuData = [
     { name: "Home", link: "/" },
-    { name: "Shop", link: "/shop" },
-    { name: "Counseling", link: "/counseling" },
-    { name: "Consultancy", link: "/consultancy" },
     {
-      name: "Mind Wellness",
-      link: "/mind-wellness",
+      name: "Skill Training Programs",
+      link: "#",
       subMenu: [
-        { name: "Daily Stress & Overthinking", link: "/mind-wellness/daily-stress" },
-        { name: "Depression", link: "/mind-wellness/depression" },
-        { name: "Anxiety", link: "/mind-wellness/anxiety" },
-        { name: "Insomnia", link: "/mind-wellness/insomnia" },
-        { name: "Mood Swings", link: "/mind-wellness/mood-swings" },
-        { name: "Sexual Desire", link: "/mind-wellness/sexual-desire" },
-        { name: "Anti Aging", link: "/mind-wellness/anti-aging" },
+        { name: "Hospital & Paramedical", link: "/skill-training/hospital-paramedical" },
+        { name: "Teacher Training", link: "/skill-training/teacher-training" },
+        { name: "Technical Skill", link: "/skill-training/technical-skill" },
+        { name: "Cutting & Tailoring", link: "/skill-training/cutting-tailoring" },
+        { name: "Safety Management", link: "/skill-training/safety-management" },
+        { name: "Industrial Skill Training", link: "/skill-training/industrial-skill-training" },
+        { name: "Engineering Training Programs", link: "/skill-training/engineering-training" },
+        { name: "Spoken English & Personality Development", link: "/skill-training/spoken-english-personality-development" },
       ],
     },
     {
-      name: "Mind Disease",
-      link: "/mind-disease",
+      name: "Vocational Programs",
+      link: "#",
       subMenu: [
-        { name: "Autism- ASD: Autism Spectrum Disorder", link: "/mind-disease/autism" },
-        { name: "ADHD- Attention Deficit Hyperactivity Disorder", link: "/mind-disease/adhd" },
-        { name: "OCD- Obsessive Compulsive Disorder", link: "/mind-disease/ocd" },
-        { name: "PTSD- Post-Traumatic Stress Disorder", link: "/mind-disease/ptsd" },
-        { name: "Bipolar Disorder", link: "/mind-disease/bipolar-disorder" },
-        { name: "Substance abuse Disorders", link: "/mind-disease/substance-abuse" },
-        { name: "Schizophrenia", link: "/mind-disease/schizophrenia" },
-        { name: "Personality Disorders", link: "/mind-disease/personality-disorders" },
-        { name: "Eating Disorder", link: "/mind-disease/eating-disorder" },
-        { name: "Dissociative Disorders", link: "/mind-disease/dissociative-disorders" },
-        { name: "Migraine", link: "/mind-disease/migraine" },
-        { name: "Suicidal Thoughts", link: "/mind-disease/suicidal-thoughts" },
-        { name: "Parkinson’s Disease", link: "/mind-disease/parkinsons-disease" },
-        { name: "Dementia", link: "/mind-disease/dementia" },
+        { name: "Hotel/Tour & Travel Management", link: "/vocational-programs/hotel-tour-travel-management" },
+        { name: "Business Management", link: "/vocational-programs/business-management" },
+        { name: "Fashion/Interior/Textile Designing", link: "/vocational-programs/fashion-interior-textile-designing" },
+        { name: "Beauty & Wellness", link: "/vocational-programs/beauty-wellness" },
+        { name: "Computer & Information Technology", link: "/vocational-programs/computer-information-technology" },
+        { name: "Arts & Painting", link: "/vocational-programs/arts-painting" },
       ],
     },
     {
-      name: "Performance Enhancement",
-      link: "/performance-enhancement",
+      name: "Student Services",
+      link: "#",
       subMenu: [
-        { name: "Competitive exams", link: "/performance-enhancement/competitive-exams" },
-        { name: "Corporate Employees", link: "/performance-enhancement/corporate-employees" },
-        { name: "Quality daily Life", link: "/performance-enhancement/quality-daily-life" },
+        { name: "Placement Cell", link: "/student-services/placement-cell" },
+        { name: "Centre Login", link: "/student-services/centre-login" },
+        { name: "Online Results", link: "/student-services/online-results" },
+        { name: "Centre Invitation", link: "/student-services/centre-invitation" },
       ],
     },
-    { name: "Training", link: "/training" },
-    { name: "Blogs", link: "/blogs" },
+    { name: "Our Gallery", link: "/gallery" },
+    { name: "Contact Us", link: "/contact" },
+    { name: "Updates", link: "/updates" },
   ];
 
-  const [menu,setmenu] = useState(false);
-  const handleMenuToggle = ()=>{
+  const [menu, setmenu] = useState(false);
+  const handleMenuToggle = () => {
     setmenu(!menu)
   }
   return (
     <>
       <header>
 
-      <div className="above-line"></div>
-        <div className="container">
+        <div className="above-line container-fluid">
+
+          <div className="contact-info">
+            <div className="single-info">
+              <i class="fa-solid fa-phone-volume"></i>
+              <a href="tel:+918130543714">+91-8130543714</a>
+            </div>
+            <div className="single-info">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <a href="mailto:info@gmail.com">info@gmail.com</a>
+            </div>
+          </div>
+
+          <div className="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+
+          <div className="login-links">
+            <Link to={`/student-services/centre-login`}>Centre Login</Link>
+            <Link to={`/student-services/online-results`}>Online Results</Link>
+            <Link to={`/student-services/centre-invitation`}>Centre Invitation</Link>
+          </div>
+        </div>
+
+        <div className="">
 
           {/* -- Above Head --  */}
           <div className='head'>
@@ -73,25 +91,14 @@ const Header = () => {
               <Link to={`/`}>
                 <img src={logo} alt="Manovaidya logo" />
               </Link>
-            </div>
-            <div className="searchform">
-              <div className="searchform-inner">
-                <input type="text" placeholder='Search...' />
-                <button>
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+              <div className="poster">
+                <img src={headImg} alt="IIST Header" />
               </div>
-
             </div>
+
 
             <div className="side-icons">
-              <Link to={`/cart`} className="icon">
-                <i class="fa-solid fa-briefcase"></i>
-                <span className="cart-num">0</span>
-              </Link>
-              <Link to={`/profile`} className="icon">
-                <i class="fa-solid fa-circle-user"></i>
-              </Link>
+
               <div className="icon hamburger" onClick={handleMenuToggle}>
                 <i class="fa-solid fa-bars"></i>
               </div>
@@ -103,9 +110,9 @@ const Header = () => {
           <div className={`nav-links ${menu ? "active" : ""}`}>
             <ul>
               {menuData.map((item, index) => (
-                <li 
-                  key={index} 
-                  className={item.subMenu ? "dropdown" : ""} 
+                <li
+                  key={index}
+                  className={item.subMenu ? "dropdown" : ""}
                   onClick={!item.subMenu ? handleMenuToggle : undefined}
                 >
                   <Link to={item.link}>{item.name}</Link>

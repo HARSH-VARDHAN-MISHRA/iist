@@ -1,0 +1,103 @@
+:root {
+    --color-began: #003873;
+    --color-light-blue: #00AAA9;
+    --color-green-blue: #2dbcb6;
+    --color-light-grey: #eef3f7;
+    --bg-white: #f7f9fe;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 2rem;
+    color: var(--color-began);
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background: var(--color-began);
+    left: 0;
+    top: 0;
+}
+
+/* Styling for programs and placement cell sections */
+.programs,
+.placement-cell {
+    padding: 40px 20px;
+}
+
+/* Flexbox layout for program items */
+.program-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Styling for individual program items */
+.program-item {
+    background-color: var(--color-light-grey);
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    flex-basis: calc(25% - 20px);
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+}
+.program-item h3{
+    font-size: 1.2rem;
+    color: var(--color-began);
+    margin-top: 0.5rem;
+}
+.program-item .program-img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Styling for placement actions */
+.placement-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    background-color: var(--color-light-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: var(--color-green-blue);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .program-item {
+        flex-basis: calc(50% - 20px);
+        /* 2 items per row on tablets and smaller screens */
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .program-item {
+        flex-basis: calc(100% - 20px);
+        /* Full width on very small screens */
+    }
+}

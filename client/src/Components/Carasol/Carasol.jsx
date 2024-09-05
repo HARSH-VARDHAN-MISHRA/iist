@@ -9,16 +9,15 @@ import './styles.css';
 import { Pagination, Navigation } from 'swiper/modules';
 
 // Import images
-import img1 from './banner.jpg';
-import img2 from './banner.jpg';
-import img3 from './banner.jpg';
+import img1 from './iist-computer-mission-banner.png';
+import img2 from './higher-education-Mission.png';
 
 const Carasol = () => {
   const [caraImg, setImage] = useState([]);
 
   useEffect(() => {
     // Set the image array to state
-    setImage([img1, img2, img3]);
+    setImage([img1, img2]);
   }, []);
 
   return (

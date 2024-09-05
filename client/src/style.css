@@ -14,17 +14,79 @@ body {
 }
 
 :root {
-    --color-began:#7233bd;
-    --bg-began:#004364;
-    --light-grey: #eef3f7;
+    --color-began: #003873;
+    --color-light-blue: #00AAA9;
+    --color-green-blue: #2dbcb6;
+    --color-light-grey: #eef3f7;
     --yellow: #fff00b;
-    --light-began:#f0daff;
+    --bg-began: #004364;
+    --light-began: #4797e8;
 
     --bg-white: #f7f9fe;
     --bg-yellow: #fefaed;
-
 }
 
-img{
+img {
     width: 100%;
+}
+
+
+
+
+.title-head {
+    margin-top: 2rem;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.title-head h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-began); 
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.title-head h1 span {
+    color: var(--color-light-blue); 
+    font-style: italic;
+}
+
+.title-head h1::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: var(--color-light-blue); 
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.title-head h1::before {
+    content: '';
+    width: 80px;
+    height: 8px;
+    background-color: var(--color-green-blue); 
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    opacity: 0.6;
+    border-radius: 4px;
+}
+
+.title-head h1:hover::after {
+    width: 100px;
+    transition: width 0.4s ease;
+}
+
+.title-head h1:hover::before {
+    width: 130px;
+    opacity: 0.8;
+    transition: width 0.4s ease, opacity 0.4s ease;
 }

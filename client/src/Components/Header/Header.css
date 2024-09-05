@@ -1,7 +1,110 @@
 .above-line {
-    background: var(--color-began);
-    height: 0.5rem;
+    background-color: var(--color-began); /* Dark blue background */
+    color: white; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
 }
+
+.above-line .contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.above-line .contact-info .single-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.above-line .contact-info .single-info i {
+    color: #00AAA9; /* Light blue color for icons */
+    font-size: 16px;
+}
+
+.above-line .contact-info .single-info a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.above-line .contact-info .single-info a:hover {
+    color: #b5e7e6; /* Light greenish-blue on hover */
+}
+
+.above-line .social-icons a {
+    color: white;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.above-line .social-icons a:hover {
+    color: #00AAA9; /* Light blue on hover */
+}
+
+.above-line .login-links {
+    display: flex;
+    gap: 15px;
+}
+
+.above-line .login-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-style: italic;
+}
+
+.above-line .login-links a:hover {
+    color: #b5e7e6; 
+}
+
+@media (max-width: 768px) {
+    .above-line {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        justify-content: space-between; 
+        gap: 0px;
+        padding: 0px !important;
+        margin: 0px !important;
+        width: 100%;
+    }
+
+    .above-line .contact-info,
+    .above-line .login-links {
+        flex-direction: row;
+        justify-content: space-between; 
+        gap: 15px; 
+        width: 95%;
+    }
+    .above-line .social-icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .above-line .contact-info .single-info,
+    .above-line .login-links a,
+    .above-line .social-icons a {
+        font-size: 14px; 
+        margin: 5px 0; 
+        
+    }
+
+    .above-line .social-icons {
+        gap: 10px; 
+    }
+
+    .above-line .social-icons a {
+        font-size: 1.2rem; 
+    }
+}
+
+
+
+
 
 header {
     position: sticky;
@@ -9,7 +112,6 @@ header {
     top: 0;
     z-index: 1000;
     background: white;
-    margin-bottom: 0.5rem;
     border-bottom: 1px solid var(--light-began);
 }
 
@@ -18,10 +120,15 @@ header .head {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background: var(--bg-yellow);
 }
 
+header .head .logo{
+    display: flex;
+    gap: 0.4rem;
+}
 header .head .logo img {
-    height: 40px;
+    height: 80px;
     width: auto;
 }
 
@@ -59,7 +166,7 @@ header .head .side-icons .icon .cart-num {
 
 header .searchform {
     border-radius: 20px 20px 20px 20px;
-    background: var(--light-grey);
+    background: var(--color-light-grey);
     padding: 0.5rem 1rem;
     flex-basis: 40%;
 }
@@ -70,14 +177,14 @@ header .searchform>.searchform-inner {
 }
 
 header .searchform .searchform-inner input[type="text"] {
-    background: var(--light-grey);
+    background: var(--color-light-grey);
     border: none;
     outline: none;
 }
 
 header .searchform-inner button {
     border-radius: 0 20px 20px 0;
-    background: var(--light-grey);
+    background: var(--color-light-grey);
     color: var(--color-began);
     border: none;
     display: flex;
@@ -87,7 +194,9 @@ header .searchform-inner button {
 
 
 
-
+header .nav-links{
+    background: var(--color-began);
+}
 
 header .nav-links>ul {
     flex-wrap: wrap;
@@ -109,7 +218,7 @@ header .nav-links ul li {
 }
 
 header .nav-links ul li a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 8px 12px;
     display: block;
@@ -117,8 +226,7 @@ header .nav-links ul li a {
 }
 
 header .nav-links ul li a:hover {
-    background-color: var(--light-began);
-    border-radius: 4px;
+    color: var(--color-light-grey);
 }
 
 /* Dropdown menu styles */
@@ -156,7 +264,7 @@ header .nav-links ul li .dropdown-menu {
 
 header .nav-links ul li .dropdown-menu li {
     margin-right: 0px !important;
-    border-bottom: 1px dashed black;
+    border-bottom: 1px solid black;
 }
 
 header .nav-links ul li .dropdown-menu li a {
@@ -166,13 +274,13 @@ header .nav-links ul li .dropdown-menu li a {
     color: black;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-size: 0.8rem;
 }
 
 header .nav-links ul li .dropdown-menu li a:hover {
-    background-color: var(--light-began);
-    color: var(--color-began);
-    padding-left: 0.5rem;
-    font-size: 0.95rem;
+    color: white;
+    background: var(--color-began);
+    padding-left: 1rem;
 }
 
 /* For a smoother transition */
@@ -230,7 +338,7 @@ header .nav-links ul li.dropdown .dropdown-menu {
     
     header .nav-links.active {
         max-height: 100vh; 
-        height: 400%;
+        height: 700%;
         overflow-y: auto; 
         opacity: 1;
         transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
@@ -243,14 +351,14 @@ header .nav-links ul li.dropdown .dropdown-menu {
     }
 
     header .nav-links>ul>li {
-        border-bottom: 1px dashed black;
+        border-bottom: 1px solid var(--color-began);
         width: 100%;
         position: relative;
         padding-left: 0px; /* Space for the + icon */
     }
 
     header .nav-links>ul>li:nth-child(1) {
-        border-top: 1px dashed black;
+        border-top: 1px solid var(--color-began);
         width: 100%;
     }
 
@@ -258,6 +366,10 @@ header .nav-links ul li.dropdown .dropdown-menu {
         font-size: 0.8rem;
         display: block;
         width: 100%;
+        color: black;
+    }
+    header .nav-links ul li a:hover {
+        color: var(--color-began);
     }
 
     /* Add a + sign to items with submenus */
@@ -308,7 +420,7 @@ header .nav-links ul li.dropdown .dropdown-menu {
 
     header .nav-links ul li .dropdown-menu li {
         margin-right: 0px !important;
-        border-bottom: 1px dashed black;
+        border-bottom: 1px solid var(--light-began);
     }
 
     header .nav-links ul li .dropdown-menu li a {
@@ -334,24 +446,26 @@ header .nav-links ul li.dropdown .dropdown-menu {
     }
 
     header .head {
-        padding: 0.5rem 0rem;
+        padding: 0.5rem 0.4rem;
+    }
+    header .head>div:nth-child(1) {
+        flex-basis: 80%;
+    }
+    header .head>div:nth-child(2) {
+        flex-basis: 20%;
     }
 
-    header .head .searchform {
-        padding: 0.4rem 1rem;
-        margin-top: 1.2rem;
-        width: 100%;
-    }
-    header .searchform>.searchform-inner {
-        display: grid;
-        grid-template-columns: 85% 15%;
-    }
 
     header .head .logo img {
-        height: auto;
+        height: 50px;
         max-width: 100%;
+        width: 50px;
+        object-fit: contain;
     }
-
+    header .head .poster img{
+        width: 100%;
+    }
+ 
     header .head .side-icons .icon i {
         font-size: 1.5rem;
     }
